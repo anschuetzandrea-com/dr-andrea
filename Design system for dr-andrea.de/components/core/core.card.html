@@ -1,0 +1,86 @@
+<!-- @dsCard group="Components" viewport="700x520" subtitle="Buttons, inputs, cards, badges, eyebrow" name="Core" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><link rel="stylesheet" href="../../styles.css">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>
+  body{margin:0;font-family:var(--font-sans);background:var(--surface-page);color:var(--text-primary)}
+  #root{padding:26px}
+  .grid{display:flex;flex-direction:column;gap:24px}
+  .row{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+  .sec{font:600 11px var(--font-sans);letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);margin:0 0 12px}
+  .block{border-top:1px solid var(--line);padding-top:18px}
+</style></head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function findNS(){
+      for (const k of Object.keys(window)) {
+        try {
+          const v = window[k];
+          if (v && typeof v === "object" && v.Button && v.Card && v.Input) return v;
+        } catch (e) {}
+      }
+      return window;
+    }
+    const NS = findNS();
+    const { Button, Input, Textarea, Card, Badge, Eyebrow } = NS;
+    function Demo(){
+      return (
+        <div className="grid">
+          <div>
+            <p className="sec">Buttons</p>
+            <div className="row">
+              <Button variant="primary">Erstgespräch buchen</Button>
+              <Button variant="accent">Selbsttest</Button>
+              <Button variant="secondary">Mehr erfahren</Button>
+              <Button variant="ghost">Newsletter</Button>
+            </div>
+            <div className="row" style={{marginTop:12}}>
+              <Button variant="primary" size="sm">Klein</Button>
+              <Button variant="primary" size="md">Mittel</Button>
+              <Button variant="primary" size="lg">Groß</Button>
+              <Button variant="primary" disabled style={{opacity:.45,cursor:"not-allowed"}}>Deaktiviert</Button>
+            </div>
+          </div>
+          <div className="block">
+            <p className="sec">Eyebrow · Badges</p>
+            <div className="row">
+              <Eyebrow>Jetzt dein Leben verändern</Eyebrow>
+            </div>
+            <div className="row" style={{marginTop:10}}>
+              <Badge tone="sage">Online</Badge>
+              <Badge tone="clay">Kostenlos</Badge>
+              <Badge tone="neutral">15 Min</Badge>
+              <Badge tone="solid">Über 15 Jahre Erfahrung</Badge>
+            </div>
+          </div>
+          <div className="block">
+            <p className="sec">Form fields</p>
+            <div className="row" style={{alignItems:"flex-start"}}>
+              <div style={{flex:1,minWidth:200}}><Input label="Name" placeholder="Dein Name" /></div>
+              <div style={{flex:1,minWidth:200}}><Input label="Email" type="email" placeholder="du@beispiel.de" /></div>
+            </div>
+          </div>
+          <div className="block">
+            <p className="sec">Cards</p>
+            <div className="row" style={{alignItems:"stretch"}}>
+              <Card tone="card" style={{flex:1,minWidth:180}}>
+                <Eyebrow tone="sage">Begleitung</Eyebrow>
+                <h3 style={{fontFamily:"var(--font-display)",fontWeight:500,margin:"8px 0 0",fontSize:20}}>Flat / cream</h3>
+              </Card>
+              <Card tone="sage" style={{flex:1,minWidth:180}}>
+                <h3 style={{fontFamily:"var(--font-display)",fontWeight:500,margin:0,fontSize:20}}>Sage tint</h3>
+              </Card>
+              <Card tone="inverse" elevation="raised" style={{flex:1,minWidth:180}}>
+                <h3 style={{fontFamily:"var(--font-display)",fontStyle:"italic",fontWeight:500,margin:0,fontSize:20,color:"var(--cream-50)"}}>Du bist willkommen</h3>
+              </Card>
+            </div>
+          </div>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<Demo/>);
+  </script>
+</body></html>

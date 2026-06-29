@@ -1,0 +1,21 @@
+<!-- @dsCard group="Website" viewport="1140x860" subtitle="Rebranded Dr. Andrea landing page" name="Homepage" -->
+<!-- @startingPoint section="Website" subtitle="Full rebranded coaching landing page" viewport="1140x860" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8">
+<title>Dr. Andrea — Homepage</title>
+<link rel="stylesheet" href="../../styles.css">
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>body{margin:0;background:var(--surface-page)}</style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="Homepage.jsx"></script>
+  <script type="text/babel">
+    (function mount(){
+      if (!window.Homepage) { return setTimeout(mount, 40); }
+      ReactDOM.createRoot(document.getElementById("root")).render(<window.Homepage/>);
+    })();
+  </script>
+</body></html>

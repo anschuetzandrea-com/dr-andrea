@@ -1,0 +1,362 @@
+---
+import '../styles/global.css';
+const calendly = "https://calendly.com/andrea-anschuetz/15min";
+const typeform  = "https://2zsx8qe1d3d.typeform.com/to/NzWmo6Dd";
+---
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content={Astro.generator} />
+  <title>Dr. Andrea — Finde dich selbst</title>
+  <meta name="description" content="Mit Dr. Andrea frei werden von seelischen und psychologischen Problemen." />
+  <link rel="icon" href="https://dr-andrea.de/assets/images/favicon.png" />
+</head>
+<body>
+
+  <!-- ══ NAV ══════════════════════════════════════════════════════ -->
+  <header style="border-bottom:1px solid var(--border-subtle); background:var(--surface-page); position:sticky; top:0; z-index:100;">
+    <div class="wrap" style="height:76px; display:flex; align-items:center; justify-content:space-between;">
+      <div style="font-family:var(--font-display); font-style:italic; font-weight:500; font-size:24px; color:var(--ink-900);">
+        Dr. Andrea
+      </div>
+      <nav style="display:flex; gap:30px; align-items:center;" class="nav-links">
+        {["Über mich","Stimmen","Ablauf","Kontakt"].map(t => (
+          <a href={`#${t.toLowerCase().replace("ü","u")}`} class="nav-link">{t}</a>
+        ))}
+        <a href={calendly} class="btn btn--primary btn--sm">Erstgespräch</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ HERO ══════════════════════════════════════════════════════ -->
+  <section style="padding:84px 0;">
+    <div class="wrap grid-2" style="display:grid; grid-template-columns:1.15fr 0.85fr; gap:56px; align-items:center;">
+      <div>
+        <span class="eyebrow">Finde dich selbst</span>
+        <h1 style="font-family:var(--font-display); font-weight:500; font-style:italic; font-size:clamp(36px,4.5vw,52px); line-height:1.14; letter-spacing:var(--ls-tight); color:var(--ink-900); margin:16px 0 26px;">
+          Frei werden von dem,<br />was dich belastet.
+        </h1>
+        <p style="font-size:var(--fs-body-lg); line-height:var(--lh-relaxed); color:var(--text-secondary); max-width:480px; margin:0;">
+          Mit Dr. Andrea löst du seelische und psychologische Themen — in einem geschützten Raum, in deinem Tempo.
+        </p>
+        <div style="display:flex; gap:14px; align-items:center; margin-top:32px; flex-wrap:wrap;">
+          <a href={calendly} class="btn btn--primary btn--lg">Kostenloses Erstgespräch</a>
+          <a href={typeform}  class="btn btn--secondary btn--lg">Selbsttest machen</a>
+        </div>
+        <div style="display:flex; gap:18px; margin-top:28px; align-items:center;">
+          <a href="https://www.instagram.com/dr.andrea.anschuetz/" target="_blank" rel="noopener"
+             style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.06em; color:var(--ink-500); text-decoration:none; border-bottom:1px solid var(--sand-300); padding-bottom:2px;">
+            Instagram
+          </a>
+          <a href="mailto:anschuetz.andrea@gmail.com"
+             style="font-family:var(--font-mono); font-size:12px; letter-spacing:0.06em; color:var(--ink-500); text-decoration:none; border-bottom:1px solid var(--sand-300); padding-bottom:2px;">
+            Email
+          </a>
+        </div>
+      </div>
+
+      <!-- Portrait + gradient orb -->
+      <div style="position:relative;">
+        <!-- orange-teal glow orbs — modern aurora accent -->
+        <div aria-hidden="true" style="position:absolute; inset:-40px; z-index:0; pointer-events:none; overflow:hidden; border-radius:50%;">
+          <div style="position:absolute; top:10%; left:5%; width:70%; height:70%; border-radius:50%;
+                      background:radial-gradient(ellipse, #48C2C9 0%, transparent 70%);
+                      filter:blur(48px); opacity:0.28;"></div>
+          <div style="position:absolute; bottom:5%; right:5%; width:60%; height:60%; border-radius:50%;
+                      background:radial-gradient(ellipse, #E8793F 0%, transparent 70%);
+                      filter:blur(52px); opacity:0.22;"></div>
+        </div>
+        <div style="position:relative; z-index:1; aspect-ratio:1/1; width:100%; overflow:hidden; border-radius:50%; box-shadow:0 8px 40px rgba(42,38,32,.12);">
+          <img
+            src="https://dr-andrea.de/assets/images/image01.jpg?v=6475f934"
+            alt="Portrait Dr. Andrea"
+            style="width:100%; height:100%; object-fit:cover; display:block;"
+          />
+        </div>
+        <div style="position:absolute; bottom:14px; left:-14px; z-index:2;">
+          <span class="badge badge--solid">Über 15 Jahre Erfahrung</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NEWSLETTER BAND ═══════════════════════════════════════════ -->
+  <section id="newsletter" style="background:var(--surface-sage); border-top:1px solid var(--sage-200); border-bottom:1px solid var(--sage-200);">
+    <div class="wrap" style="padding:30px 0; display:flex; gap:24px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <div style="font-family:var(--font-display); font-style:italic; font-size:22px; color:var(--sage-700);">
+        Bleib in Verbindung.
+      </div>
+      <form id="newsletter-form" style="display:flex; gap:12px; align-items:center; flex:1 1 320px; max-width:460px; flex-wrap:wrap;">
+        <div class="field" style="flex:1;">
+          <input id="newsletter-email" class="field__input" type="email" name="email" placeholder="Deine Email" required />
+        </div>
+        <button type="submit" class="btn btn--primary btn--md" style="white-space:nowrap;">Anmelden</button>
+        <p id="newsletter-msg" style="display:none; width:100%; margin:4px 0 0; font-size:14px;"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ══ TESTIMONIALS ══════════════════════════════════════════════ -->
+  <section id="stimmen" style="padding:88px 0 40px;">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Echte Stimmen</span>
+        <h2>Was Klient:innen erleben</h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:56px;">
+
+        <!-- Boris Bezend -->
+        <div class="testimonial">
+          <div class="testimonial__body">
+            <h3 class="testimonial__name">Boris Bezend</h3>
+            <p class="testimonial__intro">Boris hat vor ein paar Monaten angefangen, sich mit Dr. Andrea zu unterhalten.</p>
+            <blockquote class="testimonial__quote">
+              „Ich konnte effektiv Muster in meiner Wahrnehmung und Verarbeitung von Emotionen verändern. Ich kann die Zusammenarbeit wirklich herzlich empfehlen."
+            </blockquote>
+          </div>
+          <div class="testimonial__media" style="flex:0 0 auto; width:260px; height:462px; border-radius:var(--radius-lg); overflow:hidden; background:#1a1714;">
+            <video
+              src="https://dr-andrea.de/assets/videos/video02.mp4?v=6475f934"
+              poster="https://dr-andrea.de/assets/videos/video02.mp4.jpg?v=6475f934"
+              controls
+              preload="none"
+              playsinline
+              style="width:100%; height:100%; object-fit:contain; display:block;"
+            ></video>
+          </div>
+        </div>
+
+        <!-- Edgar Kretschmann -->
+        <div class="testimonial testimonial--right">
+          <div class="testimonial__body">
+            <h3 class="testimonial__name">Edgar Kretschmann</h3>
+            <p class="testimonial__intro">Edgar ist schon jahrelang mit Dr. Andrea in Gesprächen und lässt sich regelmäßig coachen.</p>
+            <blockquote class="testimonial__quote">
+              „Sie hat eine unglaubliche Methode, tiefere emotionale Knoten zu erspüren und gemeinsam aufzulösen. Ich würde sie uneingeschränkt empfehlen."
+            </blockquote>
+          </div>
+          <div class="testimonial__media" style="flex:0 0 auto; width:260px; height:462px; border-radius:var(--radius-lg); overflow:hidden; background:#1a1714;">
+            <video
+              src="https://dr-andrea.de/assets/videos/video01.mp4?v=6475f934"
+              poster="https://dr-andrea.de/assets/videos/video01.mp4.jpg?v=6475f934"
+              controls
+              preload="none"
+              playsinline
+              style="width:100%; height:100%; object-fit:contain; display:block;"
+            ></video>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HELP / BIO SPLIT ══════════════════════════════════════════ -->
+  <section id="uber-mich" style="padding:64px 0;">
+    <div class="wrap grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:stretch;">
+
+      <!-- Inverse card -->
+      <div class="card card--inverse" style="padding:40px; display:flex; flex-direction:column; justify-content:center;">
+        <span class="eyebrow eyebrow--on-dark">Erster Schritt</span>
+        <h2 style="font-family:var(--font-display); font-style:italic; font-weight:500; font-size:38px; line-height:1.1; color:var(--cream-50); margin:12px 0 20px;">
+          Kann ich dir helfen?
+        </h2>
+        <p style="font-size:16px; line-height:1.6; color:var(--cream-200); margin:0 0 26px;">
+          Finde in zwei Minuten heraus, ob meine Begleitung zu dir passt.
+        </p>
+        <div>
+          <a href={typeform} class="btn btn--accent btn--lg">Kostenlosen Selbsttest machen</a>
+        </div>
+      </div>
+
+      <!-- Bio card -->
+      <div class="card" style="padding:40px; display:flex; flex-direction:column; justify-content:center;">
+        <span class="eyebrow eyebrow--sage">Über mich</span>
+        <p style="font-size:var(--fs-body-lg); line-height:1.7; color:var(--ink-700); margin:14px 0 0;">
+          Mit über 15 Jahren Erfahrung als Beraterin und Coachin in Persönlichkeitsentwicklung und Beziehungstherapie begleite ich dich dabei, psychologische Knotenpunkte zu finden und zu lösen.
+        </p>
+        <p style="font-family:var(--font-display); font-style:italic; font-size:19px; color:var(--clay-600); margin:20px 0 0;">
+          — Deine Andrea
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ STEPS — GIB DIR EINE CHANCE ══════════════════════════════ -->
+  <section id="ablauf" style="background:var(--surface-card); border-top:1px solid var(--border-subtle); border-bottom:1px solid var(--border-subtle); padding:80px 0;">
+    <div class="wrap grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;">
+      <div>
+        <span class="eyebrow">Jetzt dein Leben verändern</span>
+        <h2 style="font-family:var(--font-display); font-style:italic; font-weight:500; font-size:44px; line-height:1.08; letter-spacing:-0.02em; color:var(--ink-900); margin:12px 0 14px;">
+          Gib dir eine Chance.
+        </h2>
+        <p style="font-size:17px; line-height:1.6; color:var(--text-secondary); margin:0 0 32px; max-width:460px;">
+          Unterstützung bei Schwierigkeiten und in herausfordernden Lebensphasen.
+        </p>
+        <div style="display:flex; flex-direction:column; gap:22px; margin-bottom:34px;">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div style="padding-top:2px;">
+              <h4 class="step__title">Kostenloses Erstgespräch</h4>
+              <p class="step__body">Wir ermitteln zusammen deine Ziele und Themen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div style="padding-top:2px;">
+              <h4 class="step__title">Gemeinsamer Weg</h4>
+              <p class="step__body">Wir einigen uns auf ein Zeitfenster, in dem wir die Themen angehen.</p>
+            </div>
+          </div>
+        </div>
+        <a href={calendly} class="btn btn--primary btn--lg">Starte jetzt mit deinem Erstgespräch</a>
+      </div>
+
+      <!-- Photo -->
+      <div style="border-radius:var(--radius-lg); overflow:hidden; aspect-ratio:4/5;">
+        <img
+          src="https://dr-andrea.de/assets/images/image07.jpg?v=6475f934"
+          alt="Andrea mit Klientin"
+          style="width:100%; height:100%; object-fit:cover; display:block;"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COMMUNITY VOICES — gradient section ══════════════════════ -->
+  <section style="position:relative; overflow:hidden; padding:88px 0;">
+    <!-- orange-teal mesh gradient background -->
+    <div aria-hidden="true" style="position:absolute; inset:0; z-index:0;
+         background: linear-gradient(135deg, #E8793F 0%, #d4607a 40%, #48C2C9 100%);
+         opacity:0.08;"></div>
+    <div aria-hidden="true" style="position:absolute; top:-120px; right:-80px; width:480px; height:480px; border-radius:50%;
+         background:radial-gradient(ellipse, #48C2C9 0%, transparent 70%);
+         filter:blur(80px); opacity:0.18; z-index:0;"></div>
+    <div aria-hidden="true" style="position:absolute; bottom:-100px; left:-60px; width:400px; height:400px; border-radius:50%;
+         background:radial-gradient(ellipse, #E8793F 0%, transparent 70%);
+         filter:blur(80px); opacity:0.14; z-index:0;"></div>
+
+    <div class="wrap" style="position:relative; z-index:1;">
+      <div class="section-head section-head--center" style="margin-bottom:36px;">
+        <span class="eyebrow">Stimmen der Community</span>
+        <h2 style="font-family:var(--font-display); font-weight:600; font-size:var(--fs-h2); line-height:var(--lh-snug); letter-spacing:var(--ls-tight); color:var(--text-heading); margin:10px 0 0;">
+          Was andere sagen
+        </h2>
+      </div>
+      <iframe
+        src="https://embed-v2.testimonial.to/w/dr-andrea-space/?animated=on&theme=light&shadowColor=ffffff&speed=2&hideDate=on&tag=all"
+        frameborder="0"
+        scrolling="no"
+        width="100%"
+        style="min-height:460px; border:none; display:block; border-radius:var(--radius-lg);"
+        title="Testimonials"
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- ══ TRUST QUOTE ════════════════════════════════════════════════ -->
+  <section style="position:relative; overflow:hidden; background:var(--ink-900); padding:76px 0;">
+    <!-- gradient top-border accent -->
+    <div aria-hidden="true" style="position:absolute; top:0; left:0; right:0; height:3px;
+         background:linear-gradient(90deg, #E8793F, #d4607a 45%, #48C2C9);"></div>
+    <div class="wrap" style="text-align:center; max-width:820px; margin:0 auto; position:relative; z-index:1;">
+      <span class="eyebrow eyebrow--on-dark">Vertrauen &amp; Nähe</span>
+      <p style="font-family:var(--font-display); font-style:italic; font-weight:400; font-size:clamp(22px,3vw,34px); line-height:1.3; color:var(--cream-50); max-width:760px; margin:18px auto 0;">
+        „Das Duzen schafft eine Atmosphäre der Nähe — eine solide Grundlage für unsere Zusammenarbeit und dein Wachstum."
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ════════════════════════════════════════════════════ -->
+  <section id="kontakt" style="padding:84px 0 48px;">
+    <div class="wrap grid-2" style="display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:start;">
+      <div>
+        <span class="eyebrow">Kontakt aufnehmen</span>
+        <h2 style="font-family:var(--font-display); font-style:italic; font-weight:500; font-size:40px; line-height:1.1; color:var(--ink-900); margin:12px 0 16px;">
+          Schreib mir.
+        </h2>
+        <p style="font-size:17px; line-height:1.6; color:var(--text-secondary); max-width:360px;">
+          Du kannst mir gerne per Mail schreiben — ich melde mich bald bei dir.
+        </p>
+      </div>
+
+      <div class="card card--soft" style="padding:32px;">
+        <form id="contact-form" style="display:flex; flex-direction:column; gap:18px;">
+          <div style="display:flex; gap:16px; flex-wrap:wrap;">
+            <div class="field" style="flex:1; min-width:140px;">
+              <label class="field__label" for="f-name">Name</label>
+              <input id="f-name" class="field__input" type="text" name="name" placeholder="Dein Name" required />
+            </div>
+            <div class="field" style="flex:1; min-width:140px;">
+              <label class="field__label" for="f-email">Email</label>
+              <input id="f-email" class="field__input" type="email" name="email" placeholder="du@beispiel.de" required />
+            </div>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-msg">Nachricht</label>
+            <textarea id="f-msg" class="field__textarea" name="message" rows="5" placeholder="Wie kann ich dir helfen?" required></textarea>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap;">
+            <button type="submit" class="btn btn--primary btn--lg">Abschicken</button>
+            <p id="contact-msg" style="display:none; margin:0; font-size:15px;"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══════════════════════════════════════════════════════ -->
+  <footer style="border-top:1px solid var(--border-subtle); margin-top:0;">
+    <div class="wrap" style="padding:36px 0; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
+      <div style="font-family:var(--font-display); font-style:italic; font-size:20px; color:var(--ink-700);">Dr. Andrea</div>
+      <div style="font-family:var(--font-mono); font-size:12px; color:var(--text-muted);">
+        © 2024 · Persönlichkeitsentwicklung &amp; Beziehungstherapie
+      </div>
+    </div>
+  </footer>
+
+
+<script>
+  async function handleForm(formId: string, endpoint: string, msgId: string) {
+    const form = document.getElementById(formId) as HTMLFormElement | null;
+    const msg  = document.getElementById(msgId)  as HTMLParagraphElement | null;
+    if (!form || !msg) return;
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      btn.disabled = true;
+      msg.style.display = 'none';
+
+      try {
+        const res  = await fetch(endpoint, { method: 'POST', body: new FormData(form) });
+        const json = await res.json() as { ok?: boolean; error?: string };
+        if (res.ok && json.ok) {
+          msg.textContent = 'Vielen Dank! Wir melden uns bald.';
+          msg.style.color = 'var(--sage-700, #3d6b5e)';
+          form.reset();
+        } else {
+          msg.textContent = json.error ?? 'Ein Fehler ist aufgetreten. Bitte versuche es erneut.';
+          msg.style.color = '#c0392b';
+          btn.disabled = false;
+        }
+      } catch {
+        msg.textContent = 'Netzwerkfehler. Bitte versuche es erneut.';
+        msg.style.color = '#c0392b';
+        btn.disabled = false;
+      }
+
+      msg.style.display = 'block';
+    });
+  }
+
+  handleForm('contact-form',    '/api/contact',    'contact-msg');
+  handleForm('newsletter-form', '/api/newsletter', 'newsletter-msg');
+</script>
+</body>
+</html>

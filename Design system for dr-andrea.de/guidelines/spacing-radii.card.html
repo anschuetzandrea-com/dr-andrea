@@ -1,0 +1,19 @@
+<!-- @dsCard group="Spacing" viewport="700x190" subtitle="Soft radii + warm shadows" name="Radii & elevation" -->
+<!DOCTYPE html><html lang="de"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;font-family:var(--font-mono);background:var(--surface-page);color:var(--text-primary)}
+  .wrap{padding:24px 28px;display:flex;gap:22px;align-items:flex-end}
+  .item{display:flex;flex-direction:column;gap:9px;align-items:center}
+  .box{width:96px;height:74px;background:var(--surface-card);border:1px solid var(--line)}
+  .lab{font-size:10.5px;color:var(--text-secondary)}
+</style></head>
+<body>
+  <div class="wrap">
+    <div class="item"><div class="box" style="border-radius:6px"></div><span class="lab">sm · 6px</span></div>
+    <div class="item"><div class="box" style="border-radius:10px"></div><span class="lab">md · 10px</span></div>
+    <div class="item"><div class="box" style="border-radius:18px"></div><span class="lab">lg · 18px</span></div>
+    <div class="item"><div class="box" style="border-radius:28px"></div><span class="lab">xl · 28px</span></div>
+    <div class="item"><div class="box" style="border-radius:10px;border:none;box-shadow:var(--shadow-sm)"></div><span class="lab">shadow-sm</span></div>
+    <div class="item"><div class="box" style="border-radius:10px;border:none;box-shadow:var(--shadow-md)"></div><span class="lab">shadow-md</span></div>
+  </div>
+</body></html>

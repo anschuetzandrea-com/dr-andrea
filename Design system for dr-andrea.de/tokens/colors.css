@@ -1,0 +1,68 @@
+/* COLORS — "Calm, grounded, warm-editorial"
+   Warm cream neutrals · muted sage primary (growth, calm) ·
+   soft clay accent (human warmth) · warm charcoal ink.
+   Low chroma throughout — nothing clinical, nothing loud. */
+
+:root {
+  /* ---- Warm neutrals ---- */
+  --cream-50:  #FBF8F2;  /* lightest surface / cards          oklch(.98 .012 86) */
+  --cream-100: #F5F0E6;  /* page background                   oklch(.95 .018 86) */
+  --cream-200: #ECE5D6;  /* subtle fill, alt rows             oklch(.92 .022 85) */
+  --sand-300:  #DED3BE;  /* warm divider / strong fill        oklch(.86 .03 83)  */
+
+  --ink-900:   #2A2620;  /* primary text                      oklch(.26 .012 70) */
+  --ink-700:   #4D463C;  /* headings on light, strong body    oklch(.39 .015 73) */
+  --ink-500:   #79705F;  /* secondary text / muted            oklch(.55 .02 75)  */
+  --ink-300:   #A99E8B;  /* faint text, placeholders          oklch(.71 .022 80) */
+
+  --line:      #E4DCCC;  /* hairline borders                  oklch(.90 .02 84)  */
+
+  /* ---- Sage — primary (calm, growth, nature) ---- */
+  --sage-700:  #4C5743;  /* primary pressed / text on tint    oklch(.40 .03 135) */
+  --sage-600:  #62704F;  /* PRIMARY                           oklch(.49 .04 132) */
+  --sage-500:  #7C8A66;  /* hover / lighter primary           oklch(.59 .045 130)*/
+  --sage-200:  #D6DCC6;  /* tints, chips                      oklch(.87 .03 128) */
+  --sage-100:  #E8EBDD;  /* faint wash / section bg           oklch(.92 .02 125) */
+
+  /* ---- Clay — accent (warmth, humanity, the personal touch) ---- */
+  --clay-700:  #97603C;  /* accent pressed                    oklch(.50 .07 55)  */
+  --clay-600:  #B0744C;  /* ACCENT                            oklch(.58 .075 55) */
+  --clay-500:  #C28C66;  /* hover / lighter accent            oklch(.66 .07 57)  */
+  --clay-200:  #EAD6C4;  /* tints, highlights                 oklch(.88 .04 64)  */
+  --clay-100:  #F4E8DC;  /* faint wash                        oklch(.93 .02 66)  */
+
+  /* ---- Status (kept low-chroma, on-brand) ---- */
+  --success:   #5E7A52;
+  --error:     #A8503E;
+
+  /* ====================================================================
+     SEMANTIC ALIASES — prefer these in components
+     ==================================================================== */
+  --surface-page:     var(--cream-100);
+  --surface-card:     var(--cream-50);
+  --surface-raised:   #FFFFFF;
+  --surface-sunken:   var(--cream-200);
+  --surface-inverse:  var(--ink-900);
+  --surface-sage:     var(--sage-100);
+  --surface-clay:     var(--clay-100);
+
+  --text-primary:     var(--ink-900);
+  --text-secondary:   var(--ink-500);
+  --text-heading:     var(--ink-700);
+  --text-muted:       var(--ink-300);
+  --text-on-dark:     var(--cream-50);
+  --text-on-brand:    var(--cream-50);
+  --text-accent:      var(--clay-600);
+
+  --brand-primary:        var(--sage-600);
+  --brand-primary-hover:  var(--sage-500);
+  --brand-primary-press:  var(--sage-700);
+  --brand-accent:         var(--clay-600);
+  --brand-accent-hover:   var(--clay-500);
+
+  --border-subtle:    var(--line);
+  --border-strong:    var(--sand-300);
+  --border-brand:     var(--sage-500);
+
+  --focus-ring:       var(--sage-500);
+}
