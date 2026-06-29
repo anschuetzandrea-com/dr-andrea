@@ -1,0 +1,142 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]: Dr. Andrea
+      - navigation [ref=e5]:
+        - link "Über mich" [ref=e6] [cursor=pointer]:
+          - /url: "#uber mich"
+        - link "Stimmen" [ref=e7] [cursor=pointer]:
+          - /url: "#stimmen"
+        - link "Ablauf" [ref=e8] [cursor=pointer]:
+          - /url: "#ablauf"
+        - link "Kontakt" [ref=e9] [cursor=pointer]:
+          - /url: "#kontakt"
+        - link "Erstgespräch" [ref=e10] [cursor=pointer]:
+          - /url: https://calendly.com/andrea-anschuetz/15min
+  - generic [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]: Finde dich selbst
+      - heading "Frei werden von dem, was dich belastet." [level=1] [ref=e15]:
+        - text: Frei werden von dem,
+        - text: was dich belastet.
+      - paragraph [ref=e16]: Mit Dr. Andrea löst du seelische und psychologische Themen — in einem geschützten Raum, in deinem Tempo.
+      - generic [ref=e17]:
+        - link "Kostenloses Erstgespräch" [ref=e18] [cursor=pointer]:
+          - /url: https://calendly.com/andrea-anschuetz/15min
+        - link "Selbsttest machen" [ref=e19] [cursor=pointer]:
+          - /url: https://2zsx8qe1d3d.typeform.com/to/NzWmo6Dd
+      - generic [ref=e20]:
+        - link "Instagram" [ref=e21] [cursor=pointer]:
+          - /url: https://www.instagram.com/dr.andrea.anschuetz/
+        - link "Email" [ref=e22] [cursor=pointer]:
+          - /url: mailto:anschuetz.andrea@gmail.com
+    - generic [ref=e23]:
+      - img "Portrait Dr. Andrea" [ref=e25]
+      - generic [ref=e27]: Über 15 Jahre Erfahrung
+  - generic [ref=e29]:
+    - generic [ref=e30]: Bleib in Verbindung.
+    - generic [ref=e31]:
+      - textbox "Deine Email" [ref=e33]
+      - button "Anmelden" [ref=e34] [cursor=pointer]
+  - generic [ref=e36]:
+    - generic [ref=e37]:
+      - generic [ref=e38]: Echte Stimmen
+      - heading "Was Klient:innen erleben" [level=2] [ref=e39]
+    - generic [ref=e40]:
+      - generic [ref=e42]:
+        - heading "Boris Bezend" [level=3] [ref=e43]
+        - paragraph [ref=e44]: Boris hat vor ein paar Monaten angefangen, sich mit Dr. Andrea zu unterhalten.
+        - blockquote [ref=e45]: „Ich konnte effektiv Muster in meiner Wahrnehmung und Verarbeitung von Emotionen verändern. Ich kann die Zusammenarbeit wirklich herzlich empfehlen."
+      - generic [ref=e49]:
+        - heading "Edgar Kretschmann" [level=3] [ref=e50]
+        - paragraph [ref=e51]: Edgar ist schon jahrelang mit Dr. Andrea in Gesprächen und lässt sich regelmäßig coachen.
+        - blockquote [ref=e52]: „Sie hat eine unglaubliche Methode, tiefere emotionale Knoten zu erspüren und gemeinsam aufzulösen. Ich würde sie uneingeschränkt empfehlen."
+  - generic [ref=e56]:
+    - generic [ref=e57]:
+      - generic [ref=e58]: Erster Schritt
+      - heading "Kann ich dir helfen?" [level=2] [ref=e59]
+      - paragraph [ref=e60]: Finde in zwei Minuten heraus, ob meine Begleitung zu dir passt.
+      - link "Kostenlosen Selbsttest machen" [ref=e62] [cursor=pointer]:
+        - /url: https://2zsx8qe1d3d.typeform.com/to/NzWmo6Dd
+    - generic [ref=e63]:
+      - generic [ref=e64]: Über mich
+      - paragraph [ref=e65]: Mit über 15 Jahren Erfahrung als Beraterin und Coachin in Persönlichkeitsentwicklung und Beziehungstherapie begleite ich dich dabei, psychologische Knotenpunkte zu finden und zu lösen.
+      - paragraph [ref=e66]: — Deine Andrea
+  - generic [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]: Jetzt dein Leben verändern
+      - heading "Gib dir eine Chance." [level=2] [ref=e71]
+      - paragraph [ref=e72]: Unterstützung bei Schwierigkeiten und in herausfordernden Lebensphasen.
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]: "1"
+          - generic [ref=e76]:
+            - heading "Kostenloses Erstgespräch" [level=4] [ref=e77]
+            - paragraph [ref=e78]: Wir ermitteln zusammen deine Ziele und Themen.
+        - generic [ref=e79]:
+          - generic [ref=e80]: "2"
+          - generic [ref=e81]:
+            - heading "Gemeinsamer Weg" [level=4] [ref=e82]
+            - paragraph [ref=e83]: Wir einigen uns auf ein Zeitfenster, in dem wir die Themen angehen.
+      - link "Starte jetzt mit deinem Erstgespräch" [ref=e84] [cursor=pointer]:
+        - /url: https://calendly.com/andrea-anschuetz/15min
+    - img "Andrea mit Klientin" [ref=e86]
+  - generic [ref=e89]:
+    - generic [ref=e90]:
+      - generic [ref=e91]: Stimmen der Community
+      - heading "Was andere sagen" [level=2] [ref=e92]
+    - generic [ref=e93]:
+      - generic [ref=e94]:
+        - blockquote [ref=e95]: „Ich konnte effektiv Muster in meiner Wahrnehmung und Verarbeitung von Emotionen verändern. Ich kann die Zusammenarbeit wirklich herzlich empfehlen."
+        - generic [ref=e97]: Boris Bezend
+      - generic [ref=e98]:
+        - blockquote [ref=e99]: „Ohne die Hilfe von Andrea hätte ich meine Zeit als Selbstständiger Unternehmer wohl nicht überlebt. Ich befand mich in einer echten Lebenskrise."
+        - generic [ref=e101]: Sebastian Schreiber
+      - generic [ref=e102]:
+        - blockquote [ref=e103]: „Sie hat eine unglaubliche Methode, tiefere emotionale Knoten zu erspüren und gemeinsam aufzulösen. Ich würde sie uneingeschränkt empfehlen."
+        - generic [ref=e105]: Edgar Kretschmann
+      - generic [ref=e106]:
+        - blockquote [ref=e107]: „Andrea hat mir geholfen, wieder zu mir selbst zu finden. Die Gespräche mit ihr sind ehrlich, tiefgehend und wirklich verändernd."
+        - generic [ref=e109]: Klient:in
+  - generic [ref=e113]:
+    - generic [ref=e114]: Vertrauen & Nähe
+    - paragraph [ref=e115]: „Das Duzen schafft eine Atmosphäre der Nähe — eine solide Grundlage für unsere Zusammenarbeit und dein Wachstum."
+  - generic [ref=e117]:
+    - generic [ref=e118]:
+      - generic [ref=e119]: Kontakt aufnehmen
+      - heading "Schreib mir." [level=2] [ref=e120]
+      - paragraph [ref=e121]: Du kannst mir gerne per Mail schreiben — ich melde mich bald bei dir.
+    - generic [ref=e123]:
+      - generic [ref=e124]:
+        - generic [ref=e125]:
+          - generic [ref=e126]: Name
+          - textbox "Name" [ref=e127]:
+            - /placeholder: Dein Name
+        - generic [ref=e128]:
+          - generic [ref=e129]: Email
+          - textbox "Email" [ref=e130]:
+            - /placeholder: du@beispiel.de
+      - generic [ref=e131]:
+        - generic [ref=e132]: Nachricht
+        - textbox "Nachricht" [ref=e133]:
+          - /placeholder: Wie kann ich dir helfen?
+      - button "Abschicken" [ref=e135] [cursor=pointer]
+  - contentinfo [ref=e136]:
+    - generic [ref=e137]:
+      - generic [ref=e138]: Dr. Andrea
+      - generic [ref=e139]: © 2024 · Persönlichkeitsentwicklung & Beziehungstherapie
+  - generic [ref=e142]:
+    - button "Menu" [ref=e143]:
+      - img [ref=e145]
+      - generic: Menu
+    - button "Inspect" [ref=e149]:
+      - img [ref=e151]
+      - generic: Inspect
+    - button "Audit" [ref=e153]:
+      - generic [ref=e154]:
+        - img [ref=e155]
+        - img [ref=e158]
+      - generic: Audit
+    - button "Settings" [ref=e161]:
+      - img [ref=e163]
+      - generic: Settings
