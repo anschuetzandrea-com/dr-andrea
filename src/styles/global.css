@@ -98,6 +98,7 @@ html {
   background: var(--surface-page);
   color: var(--text-primary);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 body { margin: 0; overflow-x: hidden; }
@@ -343,6 +344,9 @@ body { margin: 0; overflow-x: hidden; }
 @media (max-width: 768px) {
   .grid-2      { grid-template-columns: 1fr !important; }
   .testimonial { flex-direction: column !important; }
-  .testimonial__media { max-width: 100%; flex: none; width: 100%; }
+  /* !important overrides the fixed width:260px inline styles on these elements */
+  .testimonial__media { max-width: 100% !important; flex: none !important; width: 100% !important; }
   .nav-links   { display: none; }
+  /* Prevent long button text from overflowing the mobile viewport */
+  .btn         { white-space: normal; text-align: center; }
 }
