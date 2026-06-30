@@ -265,6 +265,59 @@ body { margin: 0; overflow-x: hidden; }
 }
 .nav-link:hover { color: var(--text-heading); }
 
+/* ── Hamburger button ── */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-shrink: 0;
+}
+.menu-btn span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink-900);
+  border-radius: 2px;
+  transform-origin: center;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.menu-btn[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-btn[aria-expanded="true"] span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.menu-btn[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Mobile dropdown menu ── */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--surface-page);
+  border-top: 1px solid var(--border-subtle);
+  padding-bottom: 16px;
+}
+.mobile-menu.is-open { display: flex; }
+
+.mobile-nav-link {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 14px var(--gutter);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: color var(--transition-fast), background var(--transition-fast);
+}
+.mobile-nav-link:hover { color: var(--text-heading); background: var(--cream-200); }
+.mobile-menu .btn {
+  margin: 12px var(--gutter) 0;
+  width: calc(100% - 2 * var(--gutter));
+}
+
 /* ── Section heading ── */
 .section-head { margin-bottom: 44px; }
 .section-head h2 {
@@ -340,6 +393,9 @@ body { margin: 0; overflow-x: hidden; }
   margin: 0;
 }
 
+/* Offset anchor targets so sticky nav doesn't cover the section heading */
+section[id] { scroll-margin-top: 84px; }
+
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .grid-2      { grid-template-columns: 1fr !important; }
@@ -347,6 +403,7 @@ body { margin: 0; overflow-x: hidden; }
   /* !important overrides the fixed width:260px inline styles on these elements */
   .testimonial__media { max-width: 100% !important; flex: none !important; width: 100% !important; }
   .nav-links   { display: none; }
+  .menu-btn    { display: flex; }
   /* Prevent long button text from overflowing the mobile viewport */
   .btn         { white-space: normal; text-align: center; }
 }

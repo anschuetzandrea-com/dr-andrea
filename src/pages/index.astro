@@ -24,10 +24,19 @@ const typeform  = "https://2zsx8qe1d3d.typeform.com/to/NzWmo6Dd";
       </div>
       <nav style="display:flex; gap:30px; align-items:center;" class="nav-links">
         {["Über mich","Stimmen","Ablauf","Kontakt"].map(t => (
-          <a href={`#${t.toLowerCase().replace("ü","u")}`} class="nav-link">{t}</a>
+          <a href={`#${t.toLowerCase().replace(/ü/g,"u").replace(/\s+/g,"-")}`} class="nav-link">{t}</a>
         ))}
         <a href={calendly} class="btn btn--primary btn--sm">Erstgespräch</a>
       </nav>
+      <button id="menu-btn" class="menu-btn" aria-label="Menü öffnen" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+      {["Über mich","Stimmen","Ablauf","Kontakt"].map(t => (
+        <a href={`#${t.toLowerCase().replace(/ü/g,"u").replace(/\s+/g,"-")}`} class="mobile-nav-link">{t}</a>
+      ))}
+      <a href={calendly} class="btn btn--primary btn--md">Erstgespräch buchen</a>
     </div>
   </header>
 
@@ -360,6 +369,22 @@ const typeform  = "https://2zsx8qe1d3d.typeform.com/to/NzWmo6Dd";
 
 
 <script>
+  // Mobile menu toggle
+  const menuBtn = document.getElementById('menu-btn') as HTMLButtonElement | null;
+  const mobileMenu = document.getElementById('mobile-menu');
+  menuBtn?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.toggle('is-open');
+    menuBtn.setAttribute('aria-expanded', String(!!isOpen));
+    mobileMenu?.setAttribute('aria-hidden', String(!isOpen));
+  });
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+    });
+  });
+
   async function handleForm(formId: string, endpoint: string, msgId: string) {
     const form = document.getElementById(formId) as HTMLFormElement | null;
     const msg  = document.getElementById(msgId)  as HTMLParagraphElement | null;
