@@ -30,14 +30,22 @@ export const POST: APIRoute = async ({ request }) => {
     html: `<p>Neue Newsletter-Anmeldung: <a href="mailto:${email}">${email}</a></p>`,
   });
 
-  await fetch('https://api.brevo.com/v3/contacts', {
-    method: 'POST',
-    headers: {
-      'api-key': import.meta.env.BREVO_API_KEY,
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({ email, listIds: [2], updateEnabled: true }),
-  });
+  try {
+    const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'api-key': import.meta.env.BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ email, listIds: [2], updateEnabled: true }),
+    });
+    if (!brevoRes.ok) {
+      const body = await brevoRes.text();
+      console.error('[Brevo newsletter] HTTP', brevoRes.status, body);
+    }
+  } catch (err) {
+    console.error('[Brevo newsletter] fetch failed:', err);
+  }
 
   return new Response(JSON.stringify({ ok: true }), {
     status: 200,

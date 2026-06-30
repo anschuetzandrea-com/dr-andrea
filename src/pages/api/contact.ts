@@ -33,6 +33,29 @@ export const POST: APIRoute = async ({ request }) => {
     html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p><hr/><p>${message.replace(/\n/g, '<br>')}</p>`,
   });
 
+  // Add contact to Brevo CRM — failures are logged but must not block the email response
+  try {
+    const brevoRes = await fetch('https://api.brevo.com/v3/contacts', {
+      method: 'POST',
+      headers: {
+        'api-key': import.meta.env.BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        attributes: { FIRSTNAME: name },
+        listIds: [2],
+        updateEnabled: true,
+      }),
+    });
+    if (!brevoRes.ok) {
+      const body = await brevoRes.text();
+      console.error('[Brevo contact] HTTP', brevoRes.status, body);
+    }
+  } catch (err) {
+    console.error('[Brevo contact] fetch failed:', err);
+  }
+
   return new Response(JSON.stringify({ ok: true }), {
     status: 200,
     headers: { 'Content-Type': 'application/json' },
