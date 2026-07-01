@@ -402,7 +402,7 @@ section[id] { scroll-margin-top: 84px; }
   .testimonial { flex-direction: column !important; }
   /* !important overrides the fixed width:260px inline styles on these elements */
   .testimonial__media { max-width: 100% !important; flex: none !important; width: 100% !important; }
-  .nav-links   { display: none; }
+  .nav-links   { display: none !important; }
   .menu-btn    { display: flex; }
   /* Prevent long button text from overflowing the mobile viewport */
   .btn         { white-space: normal; text-align: center; }
