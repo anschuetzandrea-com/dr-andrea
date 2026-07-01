@@ -406,4 +406,12 @@ section[id] { scroll-margin-top: 84px; }
   .menu-btn    { display: flex; }
   /* Prevent long button text from overflowing the mobile viewport */
   .btn         { white-space: normal; text-align: center; }
+  /* Footer: tighten vertical padding and stack items cleanly */
+  footer .wrap {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
 }
