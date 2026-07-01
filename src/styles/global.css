@@ -398,7 +398,7 @@ section[id] { scroll-margin-top: 84px; }
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
-  .grid-2      { grid-template-columns: 1fr !important; }
+  .grid-2      { grid-template-columns: minmax(0, 1fr) !important; }
   .testimonial { flex-direction: column !important; }
   /* !important overrides the fixed width:260px inline styles on these elements */
   .testimonial__media { max-width: 100% !important; flex: none !important; width: 100% !important; }
